@@ -1,0 +1,91 @@
+<nav class="bg-[#142B73] fixed top-0 w-full z-50 text-white py-4 px-3 text-xs [box-shadow:0px_6px_24px_0px_rgba(0,_0,_0,_0.24)] backdrop-filter backdrop-blur-[30px]">
+  <div class="flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <a href="/">
+          <img src="/src/icons/frameworks/logo.svg"/>
+      </a>
+    </div>
+    <!-- container mx-auto -->
+    <div class="flex items-center justify-between">
+    <!-- Menu "block" -->
+    <ul class="hidden space-x-5 md:flex">
+        <!--  <i class="border-solid border-[#ffffff] border-r-[1px] border-b-[1px] inline-block p-[3px] rotate-45"></i> -->
+        <li class="relative group">
+            <button class="hover:text-white p-2 flex items-center space-x-1"><span class="text-sm">Về chúng tôi</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></button>
+            <ul class="absolute left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden mx-[-25%]">
+                <!--  group-hover:block -->
+                <li>
+                  <a href="#dich-vu" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Dịch Vụ</a>
+                </li>
+                <li>
+                  <a href="/search" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Cách Vận Hành</a>
+                </li>
+              </ul>
+        </li>
+        <button><a href="/service" class="hover:text-white p-2 flex items-center space-x-1"><span class="text-sm">Dịch Vụ</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></button>
+        <button><a href="/intros" class="hover:text-white p-2 flex items-center space-x-1"><span class="text-sm">Giải pháp</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></button>
+        <button><a href="/news" class="hover:text-white p-2 flex items-center space-x-1"><span class="text-sm">Tin tức</span></a></button>
+        <button><a href="/historial" class="hover:text-white p-2 flex items-center space-x-1"><span class="text-sm">Liên Hệ</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></button>
+    </ul>
+
+    <!-- Mobile Menu Icon -->
+    <button id="menu-btn" class="text-white text-2xl md:hidden">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    </div>
+  </div>
+
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="text-center hidden md:hidden bg-[#142B73]">
+    <ul class="flex flex-col space-y-4 p-4 text-white">
+      <li class="relative group2 m-auto">
+        <button class="hover:text-white flex justify-center items-center space-x-2"><span>Về chúng tôi</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></button>
+          <ul class="absolute left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden mx-[-50%]">
+              <!--  group-hover:block -->
+              <li>
+                <a href="#dich-vu" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Dịch Vụ</a>
+              </li>
+              <li>
+                <a href="/search" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Cách Vận Hành</a>
+              </li>
+          </ul>
+      </li>
+      <li><a href="/service" class="hover:text-white flex justify-center items-center space-x-2"><span>Dịch Vụ</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></li>
+        <li><a href="/intros" class="hover:text-white flex justify-center items-center space-x-2"><span>Giải pháp</span><i class="fas fa-chevron-down  [font-size:0.6rem]"></i></a></li>
+        <li><a href="/news" class="hover:text-white flex justify-center items-center space-x-2">Tin tức</a></li>
+        <li><a href="/historial" class="hover:text-white flex justify-center items-center space-x-2"><span>Liên Hệ</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></li>
+    </ul>
+  </div>
+
+</nav>
+<div class="p-[35px]"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuItem = document.querySelector('.group');
+      const dropdownMenu = menuItem?.querySelector('ul');
+  
+      menuItem?.addEventListener('click', () => {
+        dropdownMenu?.classList.toggle('hidden');
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuItem = document.querySelector('.group2');
+      const dropdownMenu = menuItem?.querySelector('ul');
+  
+      menuItem?.addEventListener('click', () => {
+        dropdownMenu?.classList.toggle('hidden');
+      });
+    });
+
+    // JavaScript for toggling the mobile menu
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+  </script>
+  

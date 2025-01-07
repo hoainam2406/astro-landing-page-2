@@ -1,0 +1,32 @@
+---
+
+import Footer from "~/components/footer.astro";
+import Services from "~/components/service.astro";
+import Navbar from "~/components/navbar.astro";
+import Introproduct from "~/components/introproduct.astro";
+import "~/styles/index.css";
+---
+
+
+
+<!doctype html>
+<html lang="en" class="h-full motion-safe:scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+
+    <title>Astro Landing Page</title>
+
+  </head>
+  <body class="h-full overflow-x-hidden bg-default text-default text-base">
+    <header class="overflow-hidden">
+        <!-- Navbar -->
+        <Navbar/>
+        <Introproduct/>
+        <!-- thêm ở đây -->
+        <Services/>
+        <Footer/>
+    </header>
+  </body>
