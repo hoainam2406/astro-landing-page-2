@@ -31,7 +31,8 @@ module.exports = {
         '0.91xs': '420px', // Tạo breakpoint tùy chỉnh cho 400px
         '1xs': '440px', // Tạo breakpoint tùy chỉnh cho 440px
         '2xs': '480px', // Tạo breakpoint tùy chỉnh cho 480px
-        '3xs': '520px', // Tạo breakpoint tùy chỉnh cho 320px
+        '3xs': '520px', // Tạo breakpoint tùy chỉnh cho 520px
+        '4xs': '870px', // Tạo breakpoint tùy chỉnh cho 870px
       },
     },
   },

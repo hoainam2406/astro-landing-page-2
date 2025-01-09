@@ -13,7 +13,7 @@
         <!--  <i class="border-solid border-[#ffffff] border-r-[1px] border-b-[1px] inline-block p-[3px] rotate-45"></i> -->
         <li class="relative group">
             <button class="hover:text-white p-2 flex items-center space-x-1"><span class="text-sm">Về chúng tôi</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></button>
-            <ul class="absolute left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden mx-[-25%]">
+            <ul class="absolute left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden mx-[-25%]" id="dropdown-menu">
                 <!--  group-hover:block -->
                 <li>
                   <a href="#dich-vu" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Dịch Vụ</a>
@@ -41,8 +41,8 @@
   <div id="mobile-menu" class="text-center hidden md:hidden bg-[#142B73]">
     <ul class="flex flex-col space-y-4 p-4 text-white">
       <li class="relative group2 m-auto">
-        <button class="hover:text-white flex justify-center items-center space-x-2"><span>Về chúng tôi</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></button>
-          <ul class="absolute left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden mx-[-50%]">
+        <button class="hover:text-white flex justify-center items-center space-x-2" id="dropdown-trigger"><span>Về chúng tôi</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></button>
+          <ul class="absolute left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden mx-[-50%]" id="dropdown-menu">
               <!--  group-hover:block -->
               <li>
                 <a href="#dich-vu" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Dịch Vụ</a>
@@ -53,7 +53,7 @@
           </ul>
       </li>
       <li><a href="/service" class="hover:text-white flex justify-center items-center space-x-2"><span>Dịch Vụ</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></li>
-        <li><a href="/intros" class="hover:text-white flex justify-center items-center space-x-2"><span>Giải pháp</span><i class="fas fa-chevron-down  [font-size:0.6rem]"></i></a></li>
+        <li><a href="/intros" class="hover:text-white flex justify-center items-center space-x-2"><span>Giải pháp</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></li>
         <li><a href="/news" class="hover:text-white flex justify-center items-center space-x-2">Tin tức</a></li>
         <li><a href="/historial" class="hover:text-white flex justify-center items-center space-x-2"><span>Liên Hệ</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></li>
     </ul>
@@ -61,6 +61,46 @@
 
 </nav>
 <div class="p-[35px]"></div>
+<style>
+  /* Animation for dropdown menu */
+  @keyframes dropdown-pop {
+    0% {
+      transform: translateY(-20px) scale(0.9);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Apply animation to dropdown menu */
+  #dropdown-menu {
+    animation: dropdown-pop 0.3s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
+  }
+
+  /* Show menu on hover */
+  /* .group:hover #dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  } */
+
+  /* Styling the dropdown trigger */
+  #dropdown-trigger {
+    cursor: pointer;
+  }
+
+  /* Accessibility: For users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    #dropdown-menu {
+      animation: none;
+      transform: none;
+    }
+  }
+</style>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
       const menuItem = document.querySelector('.group');
@@ -80,7 +120,7 @@
       });
     });
 
-    // JavaScript for toggling the mobile menu
+    // // JavaScript for toggling the mobile menu
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
