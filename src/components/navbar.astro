@@ -1,131 +1,145 @@
-<nav class="bg-[#142B73] fixed top-0 w-full z-50 text-white py-4 px-3 text-xs [box-shadow:0px_6px_24px_0px_rgba(0,_0,_0,_0.24)] backdrop-filter backdrop-blur-[30px]">
-  <div class="flex justify-between items-center">
-    <!-- Logo -->
-    <div class="flex items-center space-x-2">
-      <a href="/">
-          <img src="/src/icons/frameworks/logo.svg"/>
-      </a>
-    </div>
-    <!-- container mx-auto -->
-    <div class="flex items-center justify-between">
-    <!-- Menu "block" -->
-    <ul class="hidden space-x-5 md:flex">
-        <!--  <i class="border-solid border-[#ffffff] border-r-[1px] border-b-[1px] inline-block p-[3px] rotate-45"></i> -->
-        <li class="relative group">
-            <button class="hover:text-white p-2 flex items-center space-x-1"><span class="text-sm">Về chúng tôi</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></button>
-            <ul class="absolute left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden mx-[-25%]" id="dropdown-menu">
-                <!--  group-hover:block -->
-                <li>
-                  <a href="#dich-vu" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Dịch Vụ</a>
-                </li>
-                <li>
-                  <a href="/search" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Cách Vận Hành</a>
-                </li>
-              </ul>
-        </li>
-        <button><a href="/service" class="hover:text-white p-2 flex items-center space-x-1"><span class="text-sm">Dịch Vụ</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></button>
-        <button><a href="/intros" class="hover:text-white p-2 flex items-center space-x-1"><span class="text-sm">Giải pháp</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></button>
-        <button><a href="/news" class="hover:text-white p-2 flex items-center space-x-1"><span class="text-sm">Tin tức</span></a></button>
-        <button><a href="/historial" class="hover:text-white p-2 flex items-center space-x-1"><span class="text-sm">Liên Hệ</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></button>
-    </ul>
+---
+import { navLinks } from "src/content/config.ts";
+// Lấy đường dẫn hiện tại từ Astro
+const currentPath = Astro.url.pathname;
+---
 
+<nav
+  class="fixed start-0 top-0 z-10 w-full bg-[#0F172A] max-lg:border-b max-lg:border-solid max-lg:border-b-slate-600"
+>
+  <div class="mx-auto flex flex-wrap items-center justify-between p-4">
     <!-- Mobile Menu Icon -->
     <button id="menu-btn" class="text-white text-2xl md:hidden">
       <i class="fa-solid fa-bars"></i>
     </button>
+    <a href="/contact" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="/src/icons/frameworks/logo.svg" class="h-8" />
+    </a>
+    <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
+      <!-- Nút Icon Tai Nghe -->
+      <button
+        class="rounded-full border-[0.95px] border-solid border-slate-600 bg-[#334155] px-4 py-4"
+      >
+        <i class="fa-solid fa-headphones px-2 text-[#ffffff]"></i>
+        <span class="text-[#ffffff] text-sm max-md:hidden"
+          >Liên hệ với chúng tôi</span
+        >
+      </button>
+    </div>
+    <div
+      class="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
+      id="navbar-sticky"
+    >
+      <ul class="flex space-x-14">
+        {
+          navLinks.map((link) => {
+            if (currentPath === link.href) {
+              return (
+                <li key?={link.href} class="pt-2">
+                  <a href={link.href} class="text-[#ffffff]">
+                    {link.name}
+                  </a>
+                  <div class="pt-3" />
+                  <div class="rounded-sm border-2 border-[#ffffff] font-semibold text-white" />
+                </li>
+              );
+            } else {
+              return (
+                <li key?={link.href} class="pb-1 pt-3">
+                  <a
+                    href={link.href}
+                    class="border-b-2 border-transparent pb-2 pt-2 text-[#ffffff]"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              );
+            }
+          })
+        }
+      </ul>
     </div>
   </div>
-
-
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="text-center hidden md:hidden bg-[#142B73]">
-    <ul class="flex flex-col space-y-4 p-4 text-white">
-      <li class="relative group2 m-auto">
-        <button class="hover:text-white flex justify-center items-center space-x-2" id="dropdown-trigger"><span>Về chúng tôi</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></button>
-          <ul class="absolute left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden mx-[-50%]" id="dropdown-menu">
-              <!--  group-hover:block -->
-              <li>
-                <a href="#dich-vu" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Dịch Vụ</a>
+  <div id="mobile-menu" class="hidden bg-[#0F172A] md:hidden">
+    <ul class="mx-auto flex items-center justify-center space-x-14">
+      {
+        navLinks.map((link) => {
+          if (currentPath === link.href) {
+            return (
+              <li key?={link.href} class="pt-2">
+                <a href={link.href} class="text-[#ffffff]">
+                  {link.name}
+                </a>
+                <div class="pt-3" />
+                <div class="rounded-sm border-2 border-[#ffffff] font-semibold text-white" />
               </li>
-              <li>
-                <a href="/search" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Cách Vận Hành</a>
+            );
+          } else {
+            return (
+              <li key?={link.href} class="pb-1 pt-3">
+                <a
+                  href={link.href}
+                  class="border-b-2 border-transparent pb-2 pt-2 text-[#ffffff]"
+                >
+                  {link.name}
+                </a>
               </li>
-          </ul>
-      </li>
-      <li><a href="/service" class="hover:text-white flex justify-center items-center space-x-2"><span>Dịch Vụ</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></li>
-        <li><a href="/intros" class="hover:text-white flex justify-center items-center space-x-2"><span>Giải pháp</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></li>
-        <li><a href="/news" class="hover:text-white flex justify-center items-center space-x-2">Tin tức</a></li>
-        <li><a href="/historial" class="hover:text-white flex justify-center items-center space-x-2"><span>Liên Hệ</span><i class="fas fa-chevron-down [font-size:0.6rem]"></i></a></li>
+            );
+          }
+        })
+      }
     </ul>
   </div>
-
 </nav>
-<div class="p-[35px]"></div>
-<style>
-  /* Animation for dropdown menu */
-  @keyframes dropdown-pop {
-    0% {
-      transform: translateY(-20px) scale(0.9);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0) scale(1);
-      opacity: 1;
-    }
-  }
 
-  /* Apply animation to dropdown menu */
-  #dropdown-menu {
-    animation: dropdown-pop 0.3s ease-out forwards;
-    opacity: 0;
-    transform: translateY(-20px) scale(0.9);
-  }
-
-  /* Show menu on hover */
-  /* .group:hover #dropdown-menu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  } */
-
-  /* Styling the dropdown trigger */
-  #dropdown-trigger {
-    cursor: pointer;
-  }
-
-  /* Accessibility: For users who prefer reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    #dropdown-menu {
-      animation: none;
-      transform: none;
-    }
-  }
-</style>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const menuItem = document.querySelector('.group');
-      const dropdownMenu = menuItem?.querySelector('ul');
-  
-      menuItem?.addEventListener('click', () => {
-        dropdownMenu?.classList.toggle('hidden');
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+    const dropdownMenus = document.querySelectorAll('ul[id^="menu-"]');
+
+    let activeMenu: HTMLElement | null = null; // Menu hiện tại đang mở
+
+    // Ẩn tất cả menu
+    const closeAllMenus = () => {
+      dropdownMenus.forEach((menu) => {
+        menu.classList.add("hidden");
+      });
+      activeMenu = null;
+    };
+
+    // Xử lý click nút dropdown
+    dropdownToggles.forEach((toggle) => {
+      toggle.addEventListener("click", (event) => {
+        event.stopPropagation(); // Ngăn việc kích hoạt sự kiện click của document
+
+        const targetMenuId = toggle.getAttribute("data-target");
+        const targetMenu = document.getElementById(targetMenuId!);
+
+        if (targetMenu === activeMenu) {
+          // Nếu nút bấm hiện tại đang mở menu, thì ẩn menu
+          targetMenu?.classList.add("hidden");
+          activeMenu = null;
+        } else {
+          // Đóng tất cả menu trước khi mở cái mới
+          closeAllMenus();
+          targetMenu?.classList.remove("hidden");
+          activeMenu = targetMenu;
+        }
       });
     });
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const menuItem = document.querySelector('.group2');
-      const dropdownMenu = menuItem?.querySelector('ul');
-  
-      menuItem?.addEventListener('click', () => {
-        dropdownMenu?.classList.toggle('hidden');
-      });
+    // Ẩn menu khi nhấp ra ngoài
+    document.addEventListener("click", () => {
+      closeAllMenus();
     });
+  });
 
-    // // JavaScript for toggling the mobile menu
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+  // // JavaScript for toggling the mobile menu
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-    menuBtn?.addEventListener('click', () => {
-      mobileMenu?.classList.toggle('hidden');
-    });
-  </script>
-  
+  menuBtn?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+  });
+</script>

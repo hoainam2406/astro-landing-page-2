@@ -1,0 +1,236 @@
+<nav class="bg-[#142B73] fixed flex flex-col top-0 w-full z-50 text-white p-4 [box-shadow:0px_6px_24px_0px_rgba(0,_0,_0,_0.24)] backdrop-filter backdrop-blur-[30px]">
+  <div class="flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <a href="/">
+          <img src="/src/icons/frameworks/logo.svg"/>
+      </a>
+    </div>
+    <!-- container mx-auto -->
+    <div class="flex flex-none space-y-2">
+    <!-- Menu "block" -->
+    <ul class="relative hidden md:flex">
+        <!--  <i class="border-solid border-[#ffffff] border-r-[1px] border-b-[1px] inline-block p-[3px] rotate-45"></i> -->
+        <li class="relative group my-auto ml-7">
+          <button class="hover:text-white flex space-x-1 dropdown-toggle leading-none" data-target="menu-about-us"><span class="text-base">Về chúng tôi</span><i class="fas fa-chevron-down text-xs/3 relative my-auto"></i></button>
+          <ul class="absolute left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden mx-[-60%]" id="menu-about-us">
+                <!--  group-hover:block -->
+              <li>
+                <a href="#dich-vu" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Dịch vụ</a>
+              </li>
+              <li>
+                <a href="/search" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Cách vận hành</a>
+              </li>
+            </ul>
+        </li>
+
+        <li class="relative group my-auto ml-7">
+          <button class="hover:text-white flex space-x-1 dropdown-toggle leading-none" data-target="menu-service"><span class="text-base">Dịch vụ</span><i class="fas fa-chevron-down text-xs/3 relative my-auto"></i></button>
+            <ul class="absolute left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden mx-[-120%]" id="menu-service">
+              <!--  group-hover:block -->
+              <li>
+                <a href="#dich-vu" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Bảo mật</a>
+              </li>
+              <li>
+                <a href="/search" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Quyền riêng tư</a>
+              </li>
+            </ul>
+        </li>
+
+        <li class="relative group my-auto ml-7">
+          <button class="hover:text-white flex space-x-1 dropdown-toggle leading-none" data-target="menu-solution"><span class="text-base">Giải pháp</span><i class="fas fa-chevron-down text-xs/3 relative my-auto"></i></button>
+            <ul class="absolute left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden mx-[-80%]" id="menu-solution">
+              <!--  group-hover:block -->
+              <li>
+                <a href="#dich-vu" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Đề phòng</a>
+              </li>
+              <li>
+                <a href="/search" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Hoàn trả</a>
+              </li>
+            </ul>
+          </li>
+          <li class="relative group my-auto ml-7">
+          <button class="hover:text-white flex space-x-1 dropdown-toggle leading-none cursor-pointer"><span class="text-base"><a href="/search" class="hover:text-[#ffffff]">Tin tức</a></span></button>
+            </li>
+        
+        <li class="relative group my-auto ml-7">
+          <button class="hover:text-white flex space-x-1 dropdown-toggle leading-none" data-target="menu-contact"><span class="text-base">Liên hệ</span><i class="fas fa-chevron-down text-xs/3 relative my-auto"></i></button>
+            <ul class="absolute left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden mx-[-110%]" id="menu-contact">
+              <!--  group-hover:block -->
+              <li>
+                <a href="#dich-vu" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Chúng tôi</a>
+              </li>
+              <li>
+                <a href="/search" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Nền tảng MXH</a>
+              </li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Mobile Menu Icon -->
+    <button id="menu-btn" class="text-white text-2xl md:hidden">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    </div>
+  </div>
+
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-[#142B73]">
+    <ul class="flex flex-col space-y-4 p-4 text-white">
+      <li class="relative m-auto">
+        <button class="hover:text-white flex justify-center items-center mx-auto space-x-1 dropdown-toggle" data-target="menu-about-us-m"><span>Về chúng tôi</span><i class="fas fa-chevron-down fa-2xs m-auto"></i></button>
+          <ul class="left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden" id="menu-about-us-m">
+              <!--  group-hover:block -->
+              <li>
+                <a href="#dich-vu" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Dịch Vụ</a>
+              </li>
+              <li>
+                <a href="/search" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Cách Vận Hành</a>
+              </li>
+          </ul>
+      </li>
+
+      <li class="relative m-auto">
+        <button class="hover:text-white flex justify-center items-center mx-auto space-x-1 dropdown-toggle" data-target="menu-about-us-m2"><span>Dịch Vụ</span><i class="fas fa-chevron-down fa-2xs m-auto"></i></button>
+          <ul class="left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden" id="menu-about-us-m2">
+              <!--  group-hover:block -->
+              <li>
+                <a href="#bao-mat" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Bảo mật</a>
+              </li>
+              <li>
+                <a href="/service" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Quyền riêng tư</a>
+              </li>
+          </ul>
+      </li>
+
+      <li class="relative m-auto">
+        <button class="hover:text-white flex justify-center items-center mx-auto space-x-1 dropdown-toggle" data-target="menu-about-us-m3"><span>Giải pháp</span><i class="fas fa-chevron-down fa-2xs m-auto"></i></button>
+          <ul class="left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden" id="menu-about-us-m3">
+              <!--  group-hover:block -->
+              <li>
+                <a href="/intros" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Đề phòng</a>
+              </li>
+              <li>
+                <a href="/service" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Hoàn trả</a>
+              </li>
+          </ul>
+      </li>
+
+        <li><a href="/news" class="hover:text-white flex justify-center items-center space-x-1">Tin tức</a></li>
+        <li class="relative m-auto">
+          <button class="hover:text-white flex justify-center items-center mx-auto space-x-1 dropdown-toggle" data-target="menu-about-us-m4"><span>Liên hệ</span><i class="fas fa-chevron-down fa-2xs m-auto"></i></button>
+            <ul class="left-0 bg-white text-gray-800 shadow-lg rounded-lg w-48 p-4 hidden" id="menu-about-us-m4">
+                <!--  group-hover:block -->
+                <li>
+                  <a href="/historial" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Chúng tôi</a>
+                </li>
+                <li>
+                  <a href="/service" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Nền tảng MXH</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+  </div>
+
+</nav>
+<div class="p-[35px]"></div>
+<style>
+  /* Animation for dropdown menu */
+  @keyframes dropdown-pop {
+    0% {
+      transform: translateY(-20px) scale(0.9);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Apply animation to dropdown menu */
+  ul[id^="menu-"] {
+    animation: dropdown-pop 0.3s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
+  }
+
+  /* Show menu on hover */
+  /* .group:hover #dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  } */
+
+  /* Styling the dropdown trigger */
+  /* #dropdown-trigger {
+    cursor: pointer;
+  } */
+
+  /* Accessibility: For users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    #ul[id^="menu-"] {
+      animation: none;
+      transform: none;
+    }
+  }
+
+.dropdown-toggle span,
+.dropdown-toggle i {
+  display: flex;
+  align-items: center; /* Đảm bảo icon và text căn giữa chính xác */
+  line-height: 1;
+}
+
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    const dropdownMenus = document.querySelectorAll('ul[id^="menu-"]');
+
+    let activeMenu: HTMLElement | null = null; // Menu hiện tại đang mở
+
+    // Ẩn tất cả menu
+    const closeAllMenus = () => {
+      dropdownMenus.forEach((menu) => {
+        menu.classList.add('hidden');
+      });
+      activeMenu = null;
+    };
+
+    // Xử lý click nút dropdown
+    dropdownToggles.forEach((toggle) => {
+      toggle.addEventListener('click', (event) => {
+        event.stopPropagation(); // Ngăn việc kích hoạt sự kiện click của document
+
+        const targetMenuId = toggle.getAttribute('data-target');
+        const targetMenu = document.getElementById(targetMenuId!);
+
+        if (targetMenu === activeMenu) {
+          // Nếu nút bấm hiện tại đang mở menu, thì ẩn menu
+          targetMenu?.classList.add('hidden');
+          activeMenu = null;
+        } else {
+          // Đóng tất cả menu trước khi mở cái mới
+          closeAllMenus();
+          targetMenu?.classList.remove('hidden');
+          activeMenu = targetMenu;
+        }
+      });
+    });
+
+    // Ẩn menu khi nhấp ra ngoài
+    document.addEventListener('click', () => {
+      closeAllMenus();
+    });
+  });
+
+    // // JavaScript for toggling the mobile menu
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+  </script>
+  

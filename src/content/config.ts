@@ -14,3 +14,10 @@ const showcase = defineCollection({
 export const collections = {
   showcase,
 };
+
+export const navLinks = [
+  { name: "Giới thiệu", href: "/" },
+  { name: "Sản phẩm", href: "/product" },
+  { name: "Dịch vụ", href: "/service" },
+];
+
