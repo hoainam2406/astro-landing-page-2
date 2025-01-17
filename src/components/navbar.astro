@@ -17,14 +17,16 @@ const currentPath = Astro.url.pathname;
     </a>
     <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
       <!-- Nút Icon Tai Nghe -->
-      <button
-        class="rounded-full border-[0.95px] border-solid border-slate-600 bg-[#334155] px-4 py-4"
-      >
-        <i class="fa-solid fa-headphones px-2 text-[#ffffff]"></i>
-        <span class="text-[#ffffff] text-sm max-md:hidden"
-          ><a href="/contact">Liên hệ với chúng tôi</a></span
+      <a href="/contact">
+        <button
+          class="rounded-full border-[0.95px] border-solid border-slate-600 bg-[#334155] px-4 py-4"
         >
-      </button>
+          <i class="fa-solid fa-headphones px-2 text-[#ffffff]"></i>
+          <span class="text-[#ffffff] text-sm max-md:hidden"
+            >Liên hệ với chúng tôi</span
+          >
+        </button>
+      </a>
     </div>
     <div
       class="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
