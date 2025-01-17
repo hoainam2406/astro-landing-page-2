@@ -12,7 +12,7 @@ const currentPath = Astro.url.pathname;
     <button id="menu-btn" class="text-white text-2xl md:hidden">
       <i class="fa-solid fa-bars"></i>
     </button>
-    <a href="/contact" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="/src/icons/frameworks/logo.svg" class="h-8" />
     </a>
     <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
@@ -22,7 +22,7 @@ const currentPath = Astro.url.pathname;
       >
         <i class="fa-solid fa-headphones px-2 text-[#ffffff]"></i>
         <span class="text-[#ffffff] text-sm max-md:hidden"
-          >Liên hệ với chúng tôi</span
+          ><a href="/contact">Liên hệ với chúng tôi</a></span
         >
       </button>
     </div>
