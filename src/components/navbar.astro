@@ -37,7 +37,8 @@ const currentPath = Astro.url.pathname;
           navLinks.map((link) => {
             if (currentPath === link.href) {
               return (
-                <li key?={link.href} class="pt-2">
+                // pt-2
+                <li key?={link.href} class="">
                   <a href={link.href} class="text-[#ffffff]">
                     {link.name}
                   </a>
@@ -47,11 +48,10 @@ const currentPath = Astro.url.pathname;
               );
             } else {
               return (
-                <li key?={link.href} class="pb-1 pt-3">
-                  <a
-                    href={link.href}
-                    class="border-b-2 border-transparent pb-2 pt-2 text-[#ffffff]"
-                  >
+                // pb-1 pt-3
+                <li key?={link.href} class="">
+                  {/* pb-2 pt-2 border-b-2 */}
+                  <a href={link.href} class="border-transparent text-[#ffffff]">
                     {link.name}
                   </a>
                 </li>

@@ -41,23 +41,97 @@
           <h2 class="py-10 text-[#ffffff] text-xl max-lg:text-sm">Liên hệ</h2>
           <input
             placeholder="Họ & tên *"
-            class="mb-6 block w-full rounded-lg bg-[#ffffff14] p-2 pl-6 text-sm"
+            class="mb-6 block h-10 w-full rounded-lg bg-[#ffffff14] p-2 pl-6 text-sm [color:blue]"
           />
           <input
             placeholder="Địa chỉ email *"
-            class="mb-6 block w-full rounded-lg bg-[#ffffff14] p-2 pl-6 text-sm"
+            class="mb-6 block h-10 w-full rounded-lg bg-[#ffffff14] p-2 pl-6 text-sm [color:blue]"
           />
-          <input
-            placeholder="XXXX XXX XXX"
-            class="mb-6 block w-full rounded-lg bg-[#ffffff14] p-2 pl-6 text-sm"
-          />
+          <div class="flex">
+            <!-- Dropdown Button z-10 -->
+            <button
+              id="dropdown-phone-button"
+              data-dropdown-toggle="dropdown-phone"
+              class="inline-flex h-10 flex-shrink-0 items-center rounded-s-lg bg-[#ffffff14] px-4 text-center text-[#ffffff] text-sm"
+              type="button"
+            >
+              <img
+                id="selected-country-flag"
+                src="/Flag_of_Vietnam.svg"
+                alt="Flag"
+                class="me-2 h-5 w-7"
+              />
+              <span id="selected-country-code">+84</span>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div
+              id="dropdown-phone"
+              class="z-10 hidden w-52 divide-y divide-gray-100 rounded-lg bg-white shadow dark:bg-gray-700"
+            >
+              <ul
+                class="py-2 text-gray-700 text-sm dark:text-gray-200"
+                aria-labelledby="dropdown-phone-button"
+              >
+                <li>
+                  <button
+                    type="button"
+                    class="inline-flex w-full px-4 py-2 text-gray-700 text-sm hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    role="menuitem"
+                    data-country-code="+1"
+                    data-country-flag="/Flag_of_the_United_States.svg"
+                  >
+                    <span class="inline-flex items-center">
+                      <img
+                        src="/Flag_of_the_United_States.svg"
+                        alt="US Flag"
+                        class="me-2 h-5 w-7"
+                      />
+                      United States (+1)
+                    </span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="inline-flex w-full px-4 py-2 text-gray-700 text-sm hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    role="menuitem"
+                    data-country-code="+84"
+                    data-country-flag="/Flag_of_Vietnam.svg"
+                  >
+                    <span class="inline-flex items-center">
+                      <img
+                        src="/Flag_of_Vietnam.svg"
+                        alt="Vietnam Flag"
+                        class="me-2 h-5 w-7"
+                      />
+                      Vietnam (+84)
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Phone Number Input -->
+            <div class="relative w-full">
+              <input
+                type="text"
+                id="phone-input"
+                aria-describedby="helper-text-explanation"
+                class="mb-6 block h-10 w-full rounded-br-[8px] rounded-tr-[8px] bg-[#ffffff14] p-2 pl-6 text-sm [color:blue]"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                placeholder="XXXX XXX XXX"
+                required
+              />
+            </div>
+          </div>
           <input
             placeholder="Tên công ty"
-            class="mb-6 block w-full rounded-lg bg-[#ffffff14] p-2 pl-6 text-sm"
+            class="mb-6 block h-10 w-full rounded-lg bg-[#ffffff14] p-2 pl-6 text-sm [color:blue]"
           />
           <input
             placeholder="Chúng tôi có thể giúp được gì cho bạn?"
-            class="mb-6 w-full rounded-lg bg-[#ffffff14] p-2 pb-24 pl-6 text-sm"
+            class="mb-6 h-10 w-full rounded-lg bg-[#ffffff14] p-6 pb-24 pl-6 text-sm [color:blue]"
           />
           <button
             class="rounded-2xl border-[1.33px] border-solid border-indigo-500 bg-[#4f46e5] px-12 py-2 text-[#ffffff]"
@@ -69,3 +143,66 @@
   </div>
 </div>
 <div class="max-lg:mb-20"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Handle dropdown toggle
+    const dropdownButton = document.getElementById(
+      "dropdown-phone-button",
+    ) as HTMLElement;
+    const dropdownMenu = document.getElementById(
+      "dropdown-phone",
+    ) as HTMLElement;
+    const selectedCountryCode = document.getElementById(
+      "selected-country-code",
+    ) as HTMLElement;
+    const selectedCountryFlag = document.getElementById(
+      "selected-country-flag",
+    ) as HTMLImageElement;
+
+    if (
+      !dropdownButton ||
+      !dropdownMenu ||
+      !selectedCountryCode ||
+      !selectedCountryFlag
+    ) {
+      console.error(
+        "One or more elements could not be found. Please check your HTML.",
+      );
+      return;
+    }
+
+    dropdownButton.addEventListener("click", () => {
+      dropdownMenu.classList.toggle("hidden");
+    });
+
+    // Update country code and flag
+    const countryButtons = dropdownMenu.querySelectorAll<HTMLButtonElement>(
+      "button[data-country-code]",
+    );
+    countryButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const countryCode = button.getAttribute("data-country-code");
+        const countryFlag = button.getAttribute("data-country-flag");
+
+        if (countryCode && countryFlag) {
+          selectedCountryCode.textContent = countryCode; // Update country code
+          selectedCountryFlag.src = countryFlag; // Update flag
+          selectedCountryFlag.alt = `${countryCode} Flag`; // Update alt text
+        }
+
+        dropdownMenu.classList.add("hidden"); // Hide dropdown menu
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (event) => {
+      if (
+        !dropdownButton.contains(event.target as Node) &&
+        !dropdownMenu.contains(event.target as Node)
+      ) {
+        dropdownMenu.classList.add("hidden");
+      }
+    });
+  });
+</script>
