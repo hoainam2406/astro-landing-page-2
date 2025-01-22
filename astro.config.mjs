@@ -11,7 +11,7 @@ export default defineConfig({
   },
   server: {
     headers: {
-      'Cache-Control': 'public, max-age=3600', // Cache trong 1 giờ
+      'Cache-Control': 'public, max-age=0', // Cache trong 1 giờ (set 0s)
       'ETag': 'W/"unique-version"', // Chỉ revalidate khi file thay đổi
     },
   },
