@@ -34,10 +34,12 @@ module.exports = {
         '3xs': '520px', // Tạo breakpoint tùy chỉnh cho 520px
         '4xs': '870px', // Tạo breakpoint tùy chỉnh cho 870px
       },
+
     },
   },
   corePlugins: {
     fontSize: false,
+
   },
   plugins: [require("tailwindcss-fluid-type")],
 };

@@ -1,11 +1,13 @@
-<div class="mt-[100px] bg-[#0f172a]">
+<div class=" bg-[#0f172a]">
   <div
-    class="grid h-[75rem] bg-[url('/contacts.png')] bg-cover max-lg:bg-[url('/contactsmobile.png')]"
+    class="grid h-[75rem] bg-[url('/contacts.png')] bg-cover max-lg:bg-[url('/contactsmobile.png')]  sm:px-[50px]"
   >
-    <div class="flex flex-col lg:flex-row">
-      <div class="mx-auto my-auto text-[#ffffff] lg:mt-80">
-        <div class="px-10">
-          <h2 class="pb-10 font-bold text-4xl">Liên hệ với chúng tôi</h2>
+    <div class="flex flex-col lg:flex-row ">
+      <div class="mx-auto sm:mx-0 my-auto text-[#ffffff] lg:mt-80">
+        <div class="px-10 sm:px-0">
+          <div class=" sm:w-fll w-[250px]">
+            <h2 class="pb-10 font-bold text-4xl">Liên hệ với chúng tôi</h2>
+          </div>
           <p class="py-2 pl-8">
             <span
               class="absolute ml-[-32px] w-9 rounded-3xl border-2 bg-[#ffffff] pl-3 text-[#000000]"
@@ -35,7 +37,7 @@
         </div>
       </div>
       <div
-        class="mx-auto my-auto max-lg:mx-0 max-lg:my-0 max-lg:bg-[#0f172a] lg:mt-80"
+        class="mx-auto my-auto max-lg:mx-0 max-lg:my-0 max-lg:bg-[#0f172a] lg:mt-80 sm:pb-[50px] " 
       >
         <div class="px-10">
           <h2 class="py-10 text-[#ffffff] text-xl max-lg:text-sm">Liên hệ</h2>
@@ -134,7 +136,7 @@
             class="mb-6 h-10 w-full rounded-lg bg-[#ffffff14] p-6 pb-24 pl-6 text-sm [color:blue]"
           />
           <button
-            class="rounded-2xl border-[1.33px] border-solid border-indigo-500 bg-[#4f46e5] px-12 py-2 text-[#ffffff]"
+            class="rounded-lg border-[1.33px] border-solid border-indigo-500 bg-[#4f46e5] px-12 py-2 text-[#ffffff]"
             >Gửi thông tin</button
           >
         </div>
@@ -142,7 +144,7 @@
     </div>
   </div>
 </div>
-<div class="max-lg:mb-20"></div>
+<div class="max-lg:mb-20 sm:hidden"></div>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {

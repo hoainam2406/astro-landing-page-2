@@ -19,7 +19,7 @@ const currentPath = Astro.url.pathname;
       <!-- Nút Icon Tai Nghe -->
       <a href="/contact">
         <button
-          class="rounded-full border-[0.95px] border-solid border-slate-600 bg-[#334155] px-4 py-4"
+          class="rounded-full border-[0.95px] border-solid border-slate-600 bg-[#334155] sm:px-4 px-2 sm:py-4 py-2"
         >
           <i class="fa-solid fa-headphones px-2 text-[#ffffff]"></i>
           <span class="text-[#ffffff] text-sm max-md:hidden"
@@ -64,7 +64,7 @@ const currentPath = Astro.url.pathname;
   </div>
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden bg-[#0F172A] md:hidden">
-    <ul class="mx-auto flex items-center justify-center space-x-14">
+    <ul class="mx-auto flex items-center justify-center space-x-8">
       {
         navLinks.map((link) => {
           if (currentPath === link.href) {
@@ -73,7 +73,7 @@ const currentPath = Astro.url.pathname;
                 <a href={link.href} class="text-[#ffffff]">
                   {link.name}
                 </a>
-                <div class="pt-3" />
+                <div class="pt-1" />
                 <div class="rounded-sm border-2 border-[#ffffff] font-semibold text-white" />
               </li>
             );
