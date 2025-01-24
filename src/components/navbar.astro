@@ -1,4 +1,5 @@
 ---
+import Icon from "node_modules/astro-icon/components/Icon.astro";
 import { navLinks } from "src/content/config.ts";
 // Lấy đường dẫn hiện tại từ Astro
 const currentPath = Astro.url.pathname;
@@ -7,7 +8,7 @@ const currentPath = Astro.url.pathname;
 <nav
   class="fixed start-0 top-0 z-10 w-full bg-[#0F172A] max-lg:border-b max-lg:border-solid max-lg:border-b-slate-600"
 >
-  <div class="mx-auto flex flex-wrap items-center justify-between p-4 lg:px-16 md:px-8 2xl:px-28">
+  <div class=" mx-auto flex flex-wrap items-center justify-between px-4 py-2 lg:px-16 md:px-8 2xl:px-28">
     <!-- Mobile Menu Icon -->
     <button id="menu-btn" class="text-white text-2xl md:hidden">
       <i class="fa-solid fa-bars"></i>
@@ -15,16 +16,16 @@ const currentPath = Astro.url.pathname;
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="/src/icons/frameworks/logo.svg" class="h-8" />
     </a>
+    <!-- Nút Icon Tai Nghe -->
     <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
-      <!-- Nút Icon Tai Nghe -->
       <a href="/contact">
         <button
-          class="rounded-full border-[0.95px] border-solid border-slate-600 bg-[#334155] sm:px-4 px-2 sm:py-4 py-2"
+          class="flex gap-1 items-center justify-center rounded-full border-[0.95px] border-solid border-slate-600 bg-[#334155] p-2 sm:px-4"
         >
-          <i class="fa-solid fa-headphones px-2 text-[#ffffff]"></i>
-          <span class="text-[#ffffff] text-sm max-md:hidden"
-            >Liên hệ với chúng tôi</span
-          >
+          <!-- <i class="fa-solid fa-headphones  text-[#ffffff] text-xs"></i> -->
+          <Icon name="headphones" color={"#ffffff"}  class=" text-xs" />
+          
+          <span class="text-[#ffffff] text-xs max-md:hidden">Liên hệ với chúng tôi</span>
         </button>
       </a>
     </div>

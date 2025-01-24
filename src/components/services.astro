@@ -1,26 +1,30 @@
-<div class="mt-[100px] border-b border-t border-solid border-slate-200  sm:px-[50px] px-[20px]
+---
+import Icon from "node_modules/astro-icon/components/Icon.astro";
+---
+
+<div class=" mt-[60px]  border-solid border-slate-200  sm:px-[50px] px-[20px]
  sm:px-[50px] px-[20px]">
   <div class=" flex flex-col  pb-[50px]">
-    <h2 class=" font-bold text-[#ffffff] text-6xl max-md:text-center py-[50px]">
+    <h2 class=" font-bold text-[#ffffff] text-4xl max-md:text-center pb-10 pt-5">
       Các dịch vụ chúng tôi cung cấp
     </h2>
-    <div class="relative z-[2] grid grid-cols-1 gap-12 lg:grid-cols-3 ">
+    <div class="relative z-[2] grid grid-cols-1 gap-5 lg:grid-cols-3 ">
       <div
-        class="max-h-fit  pb-10 rounded-xl pb-10 bg-[#1e293b] "
+        class="max-h-fit  rounded-xl pb-5 bg-[#1e293b] "
       >
        
         <div class="overflow-hidden rounded-tl-xl rounded-tr-xl  shadow-md ">
           <img
             src="/brand.png"
             alt="Card Image 1"
-            class="h-64 w-full object-cover"
+            class="h-44 w-full object-cover"
           />
           
         </div>
 
-        <div class="p-6 text-[#ffffff] ">
+        <div class="p-4 text-[#ffffff] ">
           <h2 class="font-bold text-lg">Tên định danh</h2>
-          <p class="my-6">
+          <p class="my-4 mt-2 text-sm">
             Theo quy định của pháp luật và yêu cầu của Bộ Thông tin và Truyền
             thông (Cục An toàn thông tin), tên định danh (brandname) là tên được
             sử dụng trong hoạt động quảng cáo bằng tin nhắn, gọi điện thoại.
@@ -30,14 +34,14 @@
               class="flex w-full items-center justify-center rounded-lg border-[2.67px] border-solid border-white px-4 py-5 text-[#ffffff]"
             >
               <i class="fa-solid fa-phone-volume fa-xl"></i>
-              <span class="pl-4 text-lg">Liên hệ ngay</span>
+              <span class="pl-4 text-base">Liên hệ ngay</span>
             </button>
           </div>
         </div>
         
       </div>
       <div
-        class="max-h-fit rounded-xl pb-10 bg-[#1e293b]  bg-[#0F172A]"
+        class="max-h-fit rounded-xl pb-5 bg-[#1e293b]  bg-[#0F172A]"
       >
         <!-- half top left blue up to 768px -->
         <!-- <div>
@@ -91,12 +95,12 @@
           <img
             src="/voice_brandname.png"
             alt="Card Image 1"
-            class="h-64 w-full object-cover"
+            class="h-44 w-full object-cover"
           />
         </div>
-        <div class="p-6 text-[#ffffff]">
+        <div class="p-4 text-[#ffffff]">
           <h2 class="font-bold text-lg">Voice Brandname</h2>
-          <p class="my-6">
+          <p class="my-4 mt-2 text-sm">
             Voice Brandname hay còn gọi là cuộc gọi thương hiệu. Giải pháp giúp
             doanh nghiệp có thể hiển thị tên thương hiệu của mình khi gọi điện
             tới khách hàng. Đây được xem làm giải pháp giúp doanh nghiệp sẽ tạo
@@ -109,13 +113,14 @@
               class="flex w-full items-center justify-center rounded-lg border-[2.67px] border-solid border-white px-4 py-5 text-[#ffffff]"
             >
               <i class="fa-solid fa-phone-volume fa-xl"></i>
-              <span class="pl-4 text-lg">Liên hệ ngay</span>
+               <!-- <Icon name="headphones" color={"#ffffff"}  class=" text-xs" /> -->
+              <span class="pl-4 text-base">Liên hệ ngay</span>
             </button>
           </div>
         </div>
       </div>
       <div
-        class="max-h-fit rounded-xl pb-10 bg-[#1e293b] "
+        class="max-h-fit rounded-xl pb-5 bg-[#1e293b] "
       >
         <!-- green up to 768px -->
         <!-- <div>
@@ -139,12 +144,12 @@
           <img
             src="/sms_brandname.png"
             alt="Card Image 1"
-            class="h-64 w-full object-cover"
+            class="h-44 w-full object-cover"
           />
         </div>
-        <div class="p-6 text-[#ffffff]">
+        <div class="p-4 text-[#ffffff]">
           <h2 class="font-bold text-lg">SMS Brandname/ZNS</h2>
-          <ul class="my-6 list-disc px-6">
+          <ul class="my-4 mt-2 list-disc px-6 text-sm">
             <li class="">
               SMS BrandName là tin nhắn được gắn thương hiệu của bạn gửi đến
               người dùng với mục đích quảng cáo tiếp thị sản phẩm hoặc chăm sóc
@@ -163,7 +168,8 @@
               class="flex w-full items-center justify-center rounded-lg border-[2.67px] border-solid border-white px-4 py-5 text-[#ffffff]"
             >
               <i class="fa-solid fa-phone-volume fa-xl"></i>
-              <span class="pl-4 text-lg">Liên hệ ngay</span>
+               <!-- <Icon name="headphones" color={"#ffffff"}  class=" text-xs" /> -->
+              <span class="pl-4 text-base">Liên hệ ngay</span>
             </button>
           </div>
         </div>
